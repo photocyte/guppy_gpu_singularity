@@ -7,11 +7,11 @@ MAINTAINER Timothy R. Fallon
 %files
 
 %environment
- PACKAGE_VERSION=4.0.11
- BUILD_PACKAGES="wget apt-utils apt-transport-https"
- DEBIAN_FRONTEND=noninteractive
 
 %post
+    PACKAGE_VERSION=4.0.11
+    BUILD_PACKAGES="wget apt-utils apt-transport-https"
+    DEBIAN_FRONTEND=noninteractive
     PACKAGE_NAME=ont_guppy_${PACKAGE_VERSION}-1~bionic_amd64.deb
 
     apt-get update
