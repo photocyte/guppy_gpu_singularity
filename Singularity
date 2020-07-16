@@ -10,7 +10,7 @@ MAINTAINER Timothy R. Fallon
 
 %post
     PACKAGE_VERSION=4.0.11
-    BUILD_PACKAGES="wget apt-utils apt-transport-https cmake git"
+    BUILD_PACKAGES="wget apt-utils apt-transport-https"
     DEBIAN_FRONTEND=noninteractive
     PACKAGE_NAME=ont_guppy_${PACKAGE_VERSION}-1~bionic_amd64.deb
 
@@ -20,7 +20,6 @@ MAINTAINER Timothy R. Fallon
     locale-gen "en_US.UTF-8"
     dpkg-reconfigure locales
     
-    cd /tmp
     ### guppy dependencies
     apt-get install --yes libzmq5 \
 	libhdf5-cpp-100 \
@@ -35,17 +34,18 @@ MAINTAINER Timothy R. Fallon
         libboost-log1.65.1
 	
     ### For nvtop https://github.com/Syllo/nvtop
-    apt-get install --yes libncurses5-dev \
-     libncursesw5-dev
-    git clone https://github.com/Syllo/nvtop.git
-    mkdir -p nvtop/build && cd nvtop/build
-    cmake .. -DNVML_RETRIEVE_HEADER_ONLINE=True
-    make
-    make install
+    #cd /tmp
+    #apt-get install --yes libncurses5-dev \
+    # libncursesw5-dev cmake git
+    #git clone https://github.com/Syllo/nvtop.git
+    #mkdir -p nvtop/build && cd nvtop/build
+    #cmake .. -DNVML_RETRIEVE_HEADER_ONLINE=True
+    #make
+    #make install
     ### 
     
-    cd /tmp
     ### For guppy
+    cd /tmp
     wget -q https://mirror.oxfordnanoportal.com/software/analysis/${PACKAGE_NAME}
     dpkg -I ${PACKAGE_NAME} ##Print some information about the package dependencies
     dpkg -i --ignore-depends=nvidia-driver-418,libcuda1-418 /tmp/${PACKAGE_NAME}
