@@ -16,11 +16,11 @@ MAINTAINER Timothy R. Fallon
 
     apt-get update
     apt-get install --yes $BUILD_PACKAGES
-    apt-get install locales
+    apt-get install --yes locales
     locale-gen "en_US.UTF-8"
     dpkg-reconfigure locales
     cd /tmp
-    apt-get install libzmq5 \
+    apt-get install --yes libzmq5 \
 	libhdf5-cpp-100 \
 	libboost-atomic1.65.1 \
         libboost-chrono1.65.1 \
