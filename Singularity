@@ -20,6 +20,17 @@ MAINTAINER Timothy R. Fallon
     locale-gen "en_US.UTF-8"
     dpkg-reconfigure locales
     cd /tmp
+    apt-get install libzmq5 \
+	libhdf5-cpp-100 \
+	libboost-atomic1.65.1 \
+        libboost-chrono1.65.1 \
+        libboost-date-time1.65.1 \
+        libboost-filesystem1.65.1 \
+        libboost-iostreams1.65.1 \
+        libboost-program-options1.65.1 \
+        libboost-regex1.65.1 \
+        libboost-system1.65.1 \
+        libboost-log1.65.1
     wget -q https://mirror.oxfordnanoportal.com/software/analysis/${PACKAGE_NAME}
     dpkg -I ${PACKAGE_NAME} ##Print some information about the package dependencies
     dpkg -i --ignore-depends=nvidia-driver-418,libcuda1-418 /tmp/${PACKAGE_NAME}
