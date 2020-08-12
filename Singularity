@@ -31,7 +31,8 @@ MAINTAINER Timothy R. Fallon
         libboost-program-options1.65.1 \
         libboost-regex1.65.1 \
         libboost-system1.65.1 \
-        libboost-log1.65.1
+        libboost-log1.65.1 \
+        libcurl4
 	
     ### For nvtop https://github.com/Syllo/nvtop
     #cd /tmp
