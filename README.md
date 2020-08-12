@@ -19,3 +19,10 @@ Confirmed working on GPU nodes of the SDSC TSCC cluster (Centos 7.8.2003):
 singularity exec --nv guppy_gpu_singularity_latest.sif guppy_basecaller -i fast5_pass/fast5_pass/ -s guppy_test -c /opt/ont/guppy/data/dna_r9.4.1_450bps_hac.cfg --device cuda:all:100% --num_callers 16 --gpu_runners_per_device 32 --chunks_per_caller 10000000 --read_batch_size 1000000
 ```
 (Don't know if those parameters are optimal, but seems to go faster than the default)
+
+### TSCC Troubleshooting
+
+- Try running in interactive mode `qsub -I -V -q YOUR_GPU_QUEUE -A YOUR_GROUP -l nodes=A_BEEFY_GPU_NODE:ppn=16 -l walltime=6:00:00`, to be sure you are on a GPU node.  
+- On the node, try `nvidia-smi` to confirm you can see the CUDA GPUs.
+- Confirm the installed GPUs are Compute Capability >= 6.0 (Somewhere Oxford Nanopore's help says that is the minimum version for guppy)
+- Confirm the Nvidia CUDA libraries are >= 418
