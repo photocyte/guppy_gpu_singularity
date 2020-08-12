@@ -24,5 +24,5 @@ singularity exec --nv guppy_gpu_singularity_latest.sif guppy_basecaller -i fast5
 
 - Try running in interactive mode `qsub -I -V -q YOUR_GPU_QUEUE -A YOUR_GROUP -l nodes=A_BEEFY_GPU_NODE:ppn=16 -l walltime=6:00:00`, to be sure you are on a GPU node.  
 - On the node, try `nvidia-smi` to confirm you can see the CUDA GPUs.
-- Confirm the installed GPUs are [Compute Capability >= 6.0](https://developer.nvidia.com/cuda-gpus) (Somewhere Oxford Nanopore's help says that is the minimum version for guppy)
-- Confirm the node installed Nvidia CUDA libraries are >= 418 (matching [what the container has](https://github.com/photocyte/guppy_gpu_singularity/blob/f4376d20ccbff97ea39909aad302887f028359ac/Singularity#L51))
+- Confirm the installed GPUs are [Compute Capability >= 6.1](https://developer.nvidia.com/cuda-gpus) (Somewhere Oxford Nanopore's help says that is the minimum version for guppy)
+- Confirm the node installed Nvidia CUDA libraries are >= 418 (matching [what the container is supposed to have](https://github.com/photocyte/guppy_gpu_singularity/blob/f4376d20ccbff97ea39909aad302887f028359ac/Singularity#L51))
