@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+From: nvidia/cuda:11.2.1-cudnn8-devel-ubuntu18.04
 
 %labels
 MAINTAINER Timothy R. Fallon 
@@ -17,8 +17,8 @@ MAINTAINER Timothy R. Fallon
     apt-get update
     apt-get install --yes $BUILD_PACKAGES
     apt-get install --yes locales
-    locale-gen "en_US.UTF-8"
-    dpkg-reconfigure locales
+    locale-gen --purge "en_US.UTF-8"
+    dpkg-reconfigure -f noninteractive locales
     
     ### guppy dependencies
     apt-get install --yes libzmq5 \
