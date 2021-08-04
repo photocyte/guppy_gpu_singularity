@@ -5,6 +5,12 @@ Based off https://hub.docker.com/r/genomicpariscentre/guppy-gpu/dockerfile
 
 Image building handled by singularity-hub.org
 
+But: https://singularityhub.github.io/singularityhub-docs/
+```
+Notice
+Singularity Hub is no longer online as a builder service, but exists as a read only archive. Containers built before April 19, 2021 are available at their same pull URLs.
+```
+
 ### Usage
 
 ```
