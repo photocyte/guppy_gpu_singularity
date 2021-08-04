@@ -40,3 +40,4 @@ singularity exec --nv guppy_gpu_singularity_latest.sif guppy_basecaller -i fast5
 - On the node, try `nvidia-smi; nvidia-smi -L` to confirm you can see the CUDA GPUs, and what type of GPUs they are.
 - Confirm the node installed GPUs are [Compute Capability >= 6.1](https://developer.nvidia.com/cuda-gpus) (Somewhere Oxford Nanopore's help says that is the minimum version for guppy). E.g., the GeForce RTX 2080 Ti has a Compute Capability of 7.5
 - Confirm via `nvidia-smi` that the node installed Nvidia CUDA libraries are >= 418 (matching [what the container is supposed to have](https://github.com/photocyte/guppy_gpu_singularity/blob/f4376d20ccbff97ea39909aad302887f028359ac/Singularity#L51))
+- You can find GPU nodes with `pbsnodes -a` , look for the `gpu_status` field.
