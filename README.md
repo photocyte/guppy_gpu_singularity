@@ -3,7 +3,7 @@ Singularity file for Oxford Nanopore Technologies guppy gpu basecaller
 Based off https://hub.docker.com/r/genomicpariscentre/guppy-gpu/dockerfile
 (But I wanted to use Ubuntu 18.04 and a guppy gpu v. >= 4.0.11)
 
-(2021-08-02 update: The dockerfile was updated, so I would just use that!)
+(2021-08-02 update: The source dockerfile above was updated for `CUDA 11.1`, `guppy-gpu 5.0.11`, and `Ubuntu 18.04`, so I would just use that!)
 
 ```
 singularity pull docker://genomicpariscentre/guppy-gpu
